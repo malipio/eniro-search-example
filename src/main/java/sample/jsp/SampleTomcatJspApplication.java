@@ -20,10 +20,24 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.AsyncRestTemplate;
+
+import com.github.malipio.eniro.search.service.CompanySearchService;
 
 @SpringBootApplication
 public class SampleTomcatJspApplication extends SpringBootServletInitializer {
 
+	@Bean
+	public CompanySearchService searchService() {
+		return new CompanySearchService();
+	}
+	
+	@Bean 
+	public AsyncRestTemplate asyncRestTemplate() {
+		return new AsyncRestTemplate();
+	}
+	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(SampleTomcatJspApplication.class);
