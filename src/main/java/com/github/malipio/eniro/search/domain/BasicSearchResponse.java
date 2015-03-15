@@ -2,6 +2,8 @@ package com.github.malipio.eniro.search.domain;
 
 import java.util.List;
 
+import net.karneim.pojobuilder.GeneratePojoBuilder;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
@@ -14,8 +16,10 @@ public class BasicSearchResponse {
 	private long startIndex;
 	private short itemsPerPage;
 
+	
 	public static class Advert {
 		private String eniroId;
+		
 		
 		public static class CompanyInfo {
 			private String companyName;
@@ -42,6 +46,17 @@ public class BasicSearchResponse {
 				builder.append("]");
 				return builder.toString();
 			}
+			
+			@GeneratePojoBuilder
+			public CompanyInfo(String companyName, String orgNumber,
+					String companyText) {
+				super();
+				this.companyName = companyName;
+				this.orgNumber = orgNumber;
+				this.companyText = companyText;
+			}
+			
+			
 		}
 		
 		private CompanyInfo companyInfo;
@@ -75,6 +90,7 @@ public class BasicSearchResponse {
 		public String getInfoPageLink() {
 			return infoPageLink;
 		}
+		
 		@Override
 		public String toString() {
 			StringBuilder builder = new StringBuilder();
@@ -93,6 +109,7 @@ public class BasicSearchResponse {
 			builder.append("]");
 			return builder.toString();
 		}
+		
 		@Override
 		public int hashCode() {
 			final int prime = 31;
@@ -119,6 +136,17 @@ public class BasicSearchResponse {
 			return true;
 		}
 		
+		@GeneratePojoBuilder
+		public Advert(String eniroId, CompanyInfo companyInfo, String homepage,
+				String facebook, String companyReview, String infoPageLink) {
+			super();
+			this.eniroId = eniroId;
+			this.companyInfo = companyInfo;
+			this.homepage = homepage;
+			this.facebook = facebook;
+			this.companyReview = companyReview;
+			this.infoPageLink = infoPageLink;
+		}
 	}
 
 	private List<Advert> adverts;
@@ -171,6 +199,21 @@ public class BasicSearchResponse {
 		builder.append("]");
 		return builder.toString();
 	}
+
+	@GeneratePojoBuilder
+	public BasicSearchResponse(String title, String query, long totalHits,
+			long totalCount, long startIndex, short itemsPerPage,
+			List<Advert> adverts) {
+		super();
+		this.title = title;
+		this.query = query;
+		this.totalHits = totalHits;
+		this.totalCount = totalCount;
+		this.startIndex = startIndex;
+		this.itemsPerPage = itemsPerPage;
+		this.adverts = adverts;
+	}
+	
 	
 	
 }
