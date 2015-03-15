@@ -23,24 +23,18 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.AsyncRestTemplate;
 
-import com.github.malipio.eniro.search.service.CompanySearchService;
-
 @SpringBootApplication
 public class EniroSearchExampleApplication extends SpringBootServletInitializer {
 
 	@Bean
-	public CompanySearchService searchService() {
-		return new CompanySearchService();
-	}
-	
-	@Bean 
-	public AsyncRestTemplate asyncRestTemplate() {
+	public AsyncRestTemplate restTemplate() {
 		return new AsyncRestTemplate();
 	}
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(EniroSearchExampleApplication.class);
+		return application.sources(EniroSearchExampleApplication.class, 
+				AsyncRestTemplate.class);
 	}
 
 	public static void main(String[] args) throws Exception {
