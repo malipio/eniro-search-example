@@ -57,4 +57,12 @@ public class SearchObject {
 	public Pattern getRegexpFilterAsPattern() {
 		return Pattern.compile(getRegexpFilter());
 	}
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	
 }

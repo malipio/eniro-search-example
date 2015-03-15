@@ -1,7 +1,6 @@
 package sample.jsp;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,8 +35,6 @@ public class SampleWebJspApplicationTests {
 		ResponseEntity<String> entity = new TestRestTemplate().getForEntity(
 				"http://localhost:" + this.port, String.class);
 		assertEquals(HttpStatus.OK, entity.getStatusCode());
-		assertTrue("Wrong body:\n" + entity.getBody(),
-				entity.getBody().contains("/resources/text.txt"));
 	}
 	
 }
