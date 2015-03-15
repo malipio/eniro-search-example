@@ -63,4 +63,12 @@ public class CompanyMultiSearchWithFilterService {
 				.collect(Collectors.toList());
 		
 	}
+
+	public CompanySearchService getSearchService() {
+		return searchService;
+	}
+
+	public void setSearchService(CompanySearchService searchService) {
+		this.searchService = searchService;
+	}
 }
