@@ -56,5 +56,13 @@ public class SearchControllerWebTests {
 				.param("regexpFilter", ""))
 				.andExpect(status().isOk());
 	}
+	
+	@Test
+	public void shouldPostSearchFormWithInvalidRegexp() throws Exception {
+		this.mockMvc.perform(post("/enirotest")
+				.param("searchWords", "aaa")
+				.param("regexpFilter", "[0-"))
+				.andExpect(status().isOk());
+	}
 
 }

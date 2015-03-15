@@ -27,7 +27,6 @@ public class SearchController {
 	@Autowired
 	private SearchObjectRepository searchObjectRepo;
 
-	
 	@RequestMapping(value="/enirotest", method = {RequestMethod.GET})
 	public String search(ModelMap model) {
 		model.put("searchObjectHistory", searchObjectRepo.findAll());

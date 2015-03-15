@@ -12,6 +12,8 @@ import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.github.malipio.eniro.search.domain.validator.RegExpPattern;
+
 @Entity
 public class SearchObject {
 	
@@ -24,6 +26,7 @@ public class SearchObject {
 	private String searchWords = "advokat, hotel, ikea";
 	
 	@NotEmpty(message = "regexp filter is required.")
+	@RegExpPattern
 	@Column(nullable=false)
 	private String regexpFilter = ".";
 	
