@@ -42,7 +42,7 @@ public class SearchController {
 	private SearchObjectRepository searchObjectRepo;
 
 	
-	@RequestMapping(value="/", method = {RequestMethod.GET})
+	@RequestMapping(value="/enirotest", method = {RequestMethod.GET})
 	public String search(ModelMap model) {
 		model.put("searchObjectHistory", searchObjectRepo.findAll());
 		model.putIfAbsent("searchObject", new SearchObject());
@@ -50,7 +50,7 @@ public class SearchController {
 		return "welcome";
 	}
 	
-	@RequestMapping(value="/", method = {RequestMethod.POST})
+	@RequestMapping(value="/enirotest", method = {RequestMethod.POST})
 	@Transactional
 	public String search(@ModelAttribute("searchObject") SearchObject searchObject, ModelMap model) {
 		searchObject.setSearchDate(new Date());

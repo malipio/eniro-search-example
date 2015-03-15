@@ -10,7 +10,7 @@
 <body>
 	<h1>Eniro API Search Test</h1>
 	<h2>Query parameters</h2>
-	<form:form method="POST" action="/" commandName="searchObject">
+	<form:form method="POST" action="" commandName="searchObject">
 		<table>
 			<tr>
 				<td><form:label path="searchWords">search words:</form:label></td>

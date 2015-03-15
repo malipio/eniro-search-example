@@ -33,8 +33,7 @@ public class EniroSearchExampleApplication extends SpringBootServletInitializer 
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(EniroSearchExampleApplication.class, 
-				AsyncRestTemplate.class);
+		return application.sources(EniroSearchExampleApplication.class);
 	}
 
 	public static void main(String[] args) throws Exception {
