@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package sample.jsp;
+package com.github.malipio.eniro.search;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +26,7 @@ import org.springframework.web.client.AsyncRestTemplate;
 import com.github.malipio.eniro.search.service.CompanySearchService;
 
 @SpringBootApplication
-public class SampleTomcatJspApplication extends SpringBootServletInitializer {
+public class EniroSearchExampleApplication extends SpringBootServletInitializer {
 
 	@Bean
 	public CompanySearchService searchService() {
@@ -40,11 +40,11 @@ public class SampleTomcatJspApplication extends SpringBootServletInitializer {
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(SampleTomcatJspApplication.class);
+		return application.sources(EniroSearchExampleApplication.class);
 	}
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SampleTomcatJspApplication.class, args);
+		SpringApplication.run(EniroSearchExampleApplication.class, args);
 	}
 
 }

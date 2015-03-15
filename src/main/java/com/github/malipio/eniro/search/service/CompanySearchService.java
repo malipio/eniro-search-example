@@ -1,7 +1,6 @@
 package com.github.malipio.eniro.search.service;
 
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,11 +32,14 @@ public class CompanySearchService {
 	@Value("${application.eniro.version:1.1.3}")
 	private String version;
 	
+	@Value("${application.eniro.country:se}")
+	private String country;
+	
 	@Autowired
 	private AsyncRestTemplate rest;
 	
 	public ListenableFuture<ResponseEntity<BasicSearchResponse>> basicSearchAsync(BasicSearchRequestBuilder request) {
-		request.withProfile(profile).withKey(key).withVersion(version);
+		request.withProfile(profile).withKey(key).withVersion(version).withCountry(country);
 		
 		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(apiUrl);
 		for(Map.Entry<String, String> entry : request.build().entrySet())
