@@ -46,5 +46,7 @@ public class EniroSearchExampleApplication extends SpringBootServletInitializer 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(EniroSearchExampleApplication.class, args);
 	}
+	
+	
 
 }
