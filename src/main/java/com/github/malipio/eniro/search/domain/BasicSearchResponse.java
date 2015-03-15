@@ -56,7 +56,8 @@ public class BasicSearchResponse {
 				this.companyText = companyText;
 			}
 			
-			
+			public CompanyInfo() {
+			}
 		}
 		
 		private CompanyInfo companyInfo;
@@ -147,6 +148,9 @@ public class BasicSearchResponse {
 			this.companyReview = companyReview;
 			this.infoPageLink = infoPageLink;
 		}
+		public Advert() {
+		}
+		
 	}
 
 	private List<Advert> adverts;
@@ -213,7 +217,9 @@ public class BasicSearchResponse {
 		this.itemsPerPage = itemsPerPage;
 		this.adverts = adverts;
 	}
-	
-	
+
+	public BasicSearchResponse() {
+		super();
+	}
 	
 }

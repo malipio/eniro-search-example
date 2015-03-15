@@ -15,10 +15,12 @@
 			<tr>
 				<td><form:label path="searchWords">search words:</form:label></td>
 				<td><form:input path="searchWords"/></td>
+				<td><form:errors path="searchWords" cssStyle="color: #ff0000;"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="regexpFilter">regexp filter:</form:label></td>
 				<td><form:input path="regexpFilter"/></td>
+				<td><form:errors path="regexpFilter" cssStyle="color: #ff0000;"/></td>
 			</tr>
 			<tr>
 	        <td colspan="2">
